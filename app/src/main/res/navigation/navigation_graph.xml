@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/LoginFragment">
+
+    <fragment
+        android:id="@+id/ChatFragment"
+        android:name="tw.teng.hw3.ui.fragment.ChatFragment"
+        android:label="fragment_page1"
+        tools:layout="@layout/chat_fragment">
+        <argument
+            android:name="userName"
+            android:defaultValue="User1"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/LoginFragment"
+        android:name="tw.teng.hw3.ui.fragment.LoginFragment"
+        android:label="PageDetailFragment">
+        <action
+            android:id="@+id/action_LoginFragment_to_ChatFragment"
+            app:destination="@id/ChatFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_out_right"
+            app:popExitAnim="@anim/fade_out">
+        </action>
+    </fragment>
+</navigation>
